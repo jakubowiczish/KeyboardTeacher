@@ -28,7 +28,7 @@ public class ValidatorTest {
 
         String line4 = "keyboard";
         String userInput4 = "keeeyboardss";
-        int expectedResult4 = validator.getFirstErrorIndex(userInput3, line3);
+        int expectedResult4 = validator.getFirstErrorIndex(userInput4, line4);
         assertEquals(expectedResult4, 2);
     }
 }
