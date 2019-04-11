@@ -3,7 +3,7 @@ package keyboardteacher;
 public class Validator {
     public int getFirstErrorIndex(String userInput, String lineFromFile) {
         if (userInput.equals(lineFromFile)) return -1;
-        if (userInput.isEmpty()) return 0;
+        if (userInput.isEmpty() || lineFromFile.isEmpty()) return 0;
 
         int inputLength = userInput.length();
         int lineLength = lineFromFile.length();
@@ -22,7 +22,7 @@ public class Validator {
         }
     }
 
-    public void printErrorOccurance(int errorIndex) {
+    public void printErrorOccurrence(int errorIndex) {
         if (errorIndex == -1) {
             System.out.println("Congratulations! You typed everything correctly");
         } else {

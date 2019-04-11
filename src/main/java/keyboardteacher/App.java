@@ -7,11 +7,7 @@ public class App {
             System.out.println("Wrong number of arguments - no file path given!");
         } else {
             String filePath = args[0];
-            Teacher teacher = new Teacher();
-            teacher.teach(filePath);
+            Teacher.startTeaching(filePath);
         }
     }
-
-
-
 }
