@@ -1,7 +1,7 @@
 package keyboardteacher;
 
 public class Validator {
-    private static int getFirstErrorIndex(String userInput, String lineFromFile) {
+    public int getFirstErrorIndex(String userInput, String lineFromFile) {
         if (userInput.equals(lineFromFile)) return -1;
         if (userInput.isEmpty()) return 0;
 
@@ -16,9 +16,17 @@ public class Validator {
         }
 
         if (inputLength != lineLength) {
-            return i + 1;
+            return i;
         } else {
             return -1;
+        }
+    }
+
+    public void printErrorOccurance(int errorIndex) {
+        if (errorIndex == -1) {
+            System.out.println("Congratulations! You typed everything correctly");
+        } else {
+            System.out.println("Index of the first error that occured is: " + errorIndex);
         }
     }
 
