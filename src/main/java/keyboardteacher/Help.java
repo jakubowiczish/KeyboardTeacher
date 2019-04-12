@@ -1,11 +1,13 @@
 package keyboardteacher;
 
-public class Helper {
+public final class Help {
+    private Help() {
+    }
 
     public static void printUsageInfo() {
         System.out.println(ConsoleColors.GREEN_BOLD + getUsageInfo());
         System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT + getTutorialText());
-        System.out.println(ConsoleColors.PURPLE_BOLD + "Let's begin champ! Good luck!\n" + ConsoleColors.RESET);
+        System.out.println(ConsoleColors.PURPLE_BOLD + "Let's go champ! Good luck!\n" + ConsoleColors.RESET);
     }
 
     private static String getUsageInfo() {
@@ -26,3 +28,4 @@ public class Helper {
 
     }
 }
+

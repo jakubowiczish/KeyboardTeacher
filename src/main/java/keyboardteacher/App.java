@@ -9,7 +9,7 @@ public class App {
             System.out.println("Wrong number of arguments - no file path given!");
         } else {
             String filePath = getValidFilePath(args[0]);
-            Helper.printUsageInfo();
+            Help.printUsageInfo();
             Teacher.startTeaching(filePath);
         }
     }

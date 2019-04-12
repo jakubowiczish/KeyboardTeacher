@@ -30,18 +30,40 @@ public class Teacher {
         }
     }
 
+
     private static void printHintsForWhitespaces(String line) {
+        System.out.println(setHintsForWhitespaces(line));
+    }
+
+
+    public static String setHintsForWhitespaces(String line) {
+        StringBuilder whitespaceBuilder = new StringBuilder();
         for (int i = 0; i < line.length(); ++i) {
             if (line.charAt(i) == ' ') {
-                System.out.print(".");
+                whitespaceBuilder.append(".");
             } else if (line.charAt(i) == '\t') {
-                System.out.print("--->");
+                whitespaceBuilder.append(setDashes(i)).append(">");
             } else if (line.charAt(i) == '\n') {
-                System.out.print("\\n");
+                whitespaceBuilder.append("\\n");
             } else {
-                System.out.print(line.charAt(i));
+                whitespaceBuilder.append(line.charAt(i));
             }
         }
-        System.out.println("\\n");
+        whitespaceBuilder.append("\\n");
+
+        return whitespaceBuilder.toString();
+    }
+
+    private static String setDashes(int index) {
+        String dashes;
+        String dash = "-";
+
+        if (index == 0) {
+            dashes = dash.repeat(7);
+        } else {
+            dashes = dash.repeat(index + index % 4 - 1);
+        }
+
+        return dashes;
     }
 }
