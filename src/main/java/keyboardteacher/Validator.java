@@ -43,7 +43,7 @@ public class Validator {
         }
         errorPlacement.append("\u2191");
 
-        System.out.println(errorPlacement.toString());
+        System.out.println(ConsoleColors.RED_BOLD + errorPlacement.toString() + ConsoleColors.RESET);
     }
 
 
