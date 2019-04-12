@@ -16,8 +16,8 @@ public class ValidatorTest {
                         "Well he was smart. He was persistent."
                 )
         );
-
     }
+
 
     @Test
     public void inputLongerThanLine_shouldReturnErrorAtIndex7() {
@@ -65,6 +65,7 @@ public class ValidatorTest {
                 )
         );
     }
+
 
     @Test
     public void lineEmpty_shouldReturnErrorAtIndex0() {

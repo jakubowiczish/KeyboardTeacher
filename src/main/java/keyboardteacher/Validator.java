@@ -1,5 +1,8 @@
 package keyboardteacher;
 
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Validator {
     public static final int NO_ERROR = -1;
 
@@ -26,10 +29,10 @@ public class Validator {
 
     public static void printErrorOccurrence(int errorIndex) {
         if (errorIndex == NO_ERROR) {
-            System.out.println("Congratulations! You typed everything correctly");
+            printSuccessMessage();
         } else {
             printPositionOfError(errorIndex);
-            System.out.println("Index of the first error that occurred is: " + errorIndex);
+            System.out.println("First error at index: " + errorIndex);
         }
     }
 
@@ -41,7 +44,24 @@ public class Validator {
         errorPlacement.append("\u2191");
 
         System.out.println(errorPlacement.toString());
+    }
 
+
+    private static void printSuccessMessage() {
+        ArrayList<String> successMessages = new ArrayList<>() {
+            {
+                add("Congrats!\n");
+                add("Keep it up!\n");
+                add("BANG!!!\n");
+                add("One more champ!\n");
+                add("Go on!\n");
+                add("Good for you!\n");
+            }
+        };
+
+        Random random = new Random();
+        int randomIndex = random.nextInt(successMessages.size());
+        System.out.println(successMessages.get(randomIndex));
     }
 
 }

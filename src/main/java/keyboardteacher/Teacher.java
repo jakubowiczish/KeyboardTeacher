@@ -17,6 +17,8 @@ public class Teacher {
             String line;
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
+                printHintsForWhitespaces(line);
+
                 String userInput = scanner.nextLine();
 
                 int errorIndex = Validator.getFirstErrorIndex(userInput, line);
@@ -26,5 +28,20 @@ public class Teacher {
         } catch (IOException e) {
             System.out.println("Something wrong happened while reading a line from given file");
         }
+    }
+
+    private static void printHintsForWhitespaces(String line) {
+        for (int i = 0; i < line.length(); ++i) {
+            if (line.charAt(i) == ' ') {
+                System.out.print(".");
+            } else if (line.charAt(i) == '\t') {
+                System.out.print("--->");
+            } else if (line.charAt(i) == '\n') {
+                System.out.print("\\n");
+            } else {
+                System.out.print(line.charAt(i));
+            }
+        }
+        System.out.println("\\n");
     }
 }
