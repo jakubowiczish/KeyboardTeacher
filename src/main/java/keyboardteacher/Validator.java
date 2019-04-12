@@ -32,7 +32,7 @@ public class Validator {
             printSuccessMessage();
         } else {
             printPositionOfError(errorIndex);
-            System.out.println("First error at index: " + errorIndex);
+            System.out.println(ConsoleColors.RED_BOLD + "First error at index: " + errorIndex + ConsoleColors.RESET);
         }
     }
 
@@ -61,7 +61,7 @@ public class Validator {
 
         Random random = new Random();
         int randomIndex = random.nextInt(successMessages.size());
-        System.out.println(successMessages.get(randomIndex));
+        System.out.println(ConsoleColors.GREEN_BOLD + successMessages.get(randomIndex) + ConsoleColors.RESET);
     }
 
 }
