@@ -9,8 +9,8 @@ public class App {
         String filePath = getValidFilePath(args[0]);
         Help.printUsageInfo();
         Teacher.startTeaching(filePath);
-
     }
+
 
     private static boolean isPathValid(String filePath) {
         File file = new File(filePath);
@@ -21,7 +21,7 @@ public class App {
     private static String getValidFilePath(String filePath) {
         boolean isPathValid = isPathValid(filePath);
         if (!isPathValid) {
-            System.out.println("File path is invalid! Try again");
+            Help.printColoredMessage(ConsoleColors.RED_BOLD, "File path is invalid! Try again");
             System.exit(-1);
         }
 
@@ -31,10 +31,16 @@ public class App {
 
     private static void validateNumberOfArguments(String[] args) {
         if (args.length == 0) {
-            System.out.println("Wrong number of arguments - no file path given!");
+            Help.printColoredMessage(
+                    ConsoleColors.RED_BOLD,
+                    "Wrong number of arguments - no file path given!"
+            );
             System.exit(-1);
         } else if (args.length > 1) {
-            System.out.println("Additional arguments will be ignored!");
+            Help.printColoredMessage(
+                    ConsoleColors.RED_BOLD,
+                    "Additional arguments will be ignored!"
+            );
         }
     }
 }

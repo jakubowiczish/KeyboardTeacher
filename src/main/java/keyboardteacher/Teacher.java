@@ -6,16 +6,16 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
-import java.util.concurrent.TimeUnit;
 
 public class Teacher {
 
     private static DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
+
     public static void startTeaching(String filePath) {
         File file = new File(filePath);
         Scanner scanner = new Scanner(System.in);
-        double totalTime = 0;
+        double totalTypingTime = 0;
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(file))) {
 
@@ -24,7 +24,7 @@ public class Teacher {
                 line = line.replaceAll("\t", "    ");
 
                 System.out.println(line);
-                printHintsForWhitespaces(line);
+                System.out.println(setHintsForWhitespaces(line));
 
                 long startTime = System.nanoTime();
                 String userInput = scanner.nextLine();
@@ -33,31 +33,32 @@ public class Teacher {
                 int errorIndex = Validator.getFirstErrorIndex(userInput, line);
                 Validator.printErrorOccurrence(errorIndex);
 
-                double executionTime = getDurationTimeInSeconds(startTime, endTime);
-                printDurationTimeInSeconds(executionTime);
-                totalTime += executionTime;
+                double typingTime = getTypingTime(startTime, endTime);
+                printTypingTimeInSeconds(typingTime);
+
+                totalTypingTime += typingTime;
             }
 
         } catch (IOException e) {
-            System.out.println("Something wrong happened while reading a line from given file");
+            Help.printColoredMessage(
+                    ConsoleColors.RED_BOLD,
+                    "Something wrong happened while reading a line from given file"
+            );
         }
 
-        System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT + "Whole typing operation lasted " + decimalFormat.format(totalTime) + " seconds");
+        Help.printColoredMessage(
+                ConsoleColors.BLUE_BOLD_BRIGHT,
+                "Whole typing operation lasted " + decimalFormat.format(totalTypingTime) + " seconds"
+        );
     }
 
 
-    private static void printHintsForWhitespaces(String line) {
-        System.out.println(setHintsForWhitespaces(line));
-    }
-
-
-    private static double getDurationTimeInSeconds(long startTime, long endTime) {
+    private static double getTypingTime(long startTime, long endTime) {
         return (double) (endTime - startTime) / 1000000000;
     }
 
 
-    private static void printDurationTimeInSeconds(double durationTime) {
-
+    private static void printTypingTimeInSeconds(double durationTime) {
         String timeSentence =  "It took you " + decimalFormat.format(durationTime) + " seconds to retype the line!";
         System.out.println(ConsoleColors.YELLOW_BOLD + timeSentence + ConsoleColors.RESET);
 

@@ -4,16 +4,19 @@ public final class Help {
     private Help() {
     }
 
+
     public static void printUsageInfo() {
-        System.out.println(ConsoleColors.GREEN_BOLD + getUsageInfo());
-        System.out.println(ConsoleColors.BLUE_BOLD_BRIGHT + getTutorialText());
-        System.out.println(ConsoleColors.PURPLE_BOLD + "Let's go champ! Good luck!\n" + ConsoleColors.RESET);
+        printColoredMessage(ConsoleColors.GREEN_BOLD, getUsageInfo());
+        printColoredMessage(ConsoleColors.BLUE_BOLD_BRIGHT, getTutorialText());
+        printColoredMessage(ConsoleColors.PURPLE_BOLD, getGoodLuckInfo());
     }
+
 
     private static String getUsageInfo() {
         return "\nThis program is dedicated to help you" +
                 " improve your typing skills!\n";
     }
+
 
     private static String getTutorialText() {
         return "Before we start let me tell you something\n\n" +
@@ -25,6 +28,16 @@ public final class Help {
                 "\".\" stands for space\n" +
                 "\"--->\" stands for tab\n" +
                 "\"\\n\" stands for new line - that's when you ought to hit enter button.\n";
+    }
+
+
+    private static String getGoodLuckInfo() {
+        return "\nLet's go champ! Good luck!\n";
+    }
+
+
+    public static void printColoredMessage(ConsoleColors color, String message) {
+        System.out.println(color.toString() + message + ConsoleColors.RESET);
     }
 }
 

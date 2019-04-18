@@ -1,14 +1,27 @@
 package keyboardteacher;
 
-public final class ConsoleColors {
-    private ConsoleColors() {
+public enum ConsoleColors {
+    GREEN_BOLD("\033[1;32m"),
+
+    RED_BOLD("\033[1;31m"),
+
+    BLUE_BOLD_BRIGHT("\033[1;94m"),
+
+    PURPLE_BOLD("\033[1;35m"),
+
+    YELLOW_BOLD("\033[1;33m"),
+
+    RESET("\033[0m");
+
+    private final String colorCode;
+
+    ConsoleColors(String colorCode) {
+        this.colorCode = colorCode;
     }
 
-    public static final String GREEN_BOLD = "\033[1;32m";
-    public static final String RED_BOLD = "\033[1;31m";
-    public static final String BLUE_BOLD_BRIGHT = "\033[1;94m";
-    public static final String PURPLE_BOLD = "\033[1;35m";
-    public static final String YELLOW_BOLD = "\033[1;33m"; // YELLOW
 
-    public static final String RESET = "\033[0m";
+    @Override
+    public String toString() {
+        return colorCode;
+    }
 }
