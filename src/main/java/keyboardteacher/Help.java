@@ -25,7 +25,6 @@ public final class Help {
                 "\".\" stands for space\n" +
                 "\"--->\" stands for tab\n" +
                 "\"\\n\" stands for new line - that's when you ought to hit enter button.\n";
-
     }
 }
 

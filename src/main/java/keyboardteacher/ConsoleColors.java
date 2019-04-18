@@ -8,8 +8,7 @@ public final class ConsoleColors {
     public static final String RED_BOLD = "\033[1;31m";
     public static final String BLUE_BOLD_BRIGHT = "\033[1;94m";
     public static final String PURPLE_BOLD = "\033[1;35m";
+    public static final String YELLOW_BOLD = "\033[1;33m"; // YELLOW
 
     public static final String RESET = "\033[0m";
-
-
 }
