@@ -66,11 +66,11 @@ public class Teacher {
      * Returns time that it took user to type given line
      *
      * @param startTime start time of typing
-     * @param endTime end time of typing
+     * @param endTime   end time of typing
      * @return typing time in seconds
      */
     private static double getTypingTime(long startTime, long endTime) {
-        return (double) (endTime - startTime) / 1000000000;
+        return (endTime - startTime) / 1000000000.0;
     }
 
 
@@ -80,9 +80,8 @@ public class Teacher {
      * @param typingTime time that it took user to type the line
      */
     private static void printTypingTime(double typingTime) {
-        String timeSentence =  "It took you " + decimalFormat.format(typingTime) + " seconds to retype the line!";
+        String timeSentence = "It took you " + decimalFormat.format(typingTime) + " seconds to retype the line!";
         System.out.println(ConsoleColors.YELLOW_BOLD + timeSentence + ConsoleColors.RESET);
-
     }
 
 
