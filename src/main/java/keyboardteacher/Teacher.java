@@ -7,11 +7,19 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
+/**
+ * Class that contains method that is responsible for handling user input
+ */
 public class Teacher {
 
     private static DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
-
+    /**
+     * Reads from line by line, then does necessary operations
+     * like getting input from user, checking it and printing information
+     *
+     * @param filePath path to file that contains lines which user is to retype
+     */
     public static void startTeaching(String filePath) {
         File file = new File(filePath);
         Scanner scanner = new Scanner(System.in);
@@ -34,7 +42,7 @@ public class Teacher {
                 Validator.printErrorOccurrence(errorIndex);
 
                 double typingTime = getTypingTime(startTime, endTime);
-                printTypingTimeInSeconds(typingTime);
+                printTypingTime(typingTime);
 
                 totalTypingTime += typingTime;
             }
@@ -53,18 +61,37 @@ public class Teacher {
     }
 
 
+    /**
+     * Returns time that it took user to type given line
+     *
+     * @param startTime start time of typing
+     * @param endTime end time of typing
+     * @return typing time in seconds
+     */
     private static double getTypingTime(long startTime, long endTime) {
         return (double) (endTime - startTime) / 1000000000;
     }
 
 
-    private static void printTypingTimeInSeconds(double durationTime) {
-        String timeSentence =  "It took you " + decimalFormat.format(durationTime) + " seconds to retype the line!";
+    /**
+     * Prints user typing time in seconds
+     *
+     * @param typingTime time that it took user to type the line
+     */
+    private static void printTypingTime(double typingTime) {
+        String timeSentence =  "It took you " + decimalFormat.format(typingTime) + " seconds to retype the line!";
         System.out.println(ConsoleColors.YELLOW_BOLD + timeSentence + ConsoleColors.RESET);
 
     }
 
 
+    /**
+     * Returns line that contains some hints for user about whitespaces in line
+     *
+     * @param line line from a file
+     * @return line that contains some hints for user about whitespaces in given line
+     * @see Teacher
+     */
     public static String setHintsForWhitespaces(String line) {
         StringBuilder whitespaceBuilder = new StringBuilder();
         for (int i = 0; i < line.length(); ++i) {

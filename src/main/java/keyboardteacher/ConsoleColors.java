@@ -1,5 +1,8 @@
 package keyboardteacher;
 
+/**
+ * Contains some colors for console messages
+ */
 public enum ConsoleColors {
     GREEN_BOLD("\033[1;32m"),
 

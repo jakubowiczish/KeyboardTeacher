@@ -1,10 +1,16 @@
 package keyboardteacher;
 
+/**
+ * Contains some methods that might be helpful for the user
+ */
 public final class Help {
     private Help() {
     }
 
 
+    /**
+     * Prints some information that might be necessary for user
+     */
     public static void printUsageInfo() {
         printColoredMessage(ConsoleColors.GREEN_BOLD, getUsageInfo());
         printColoredMessage(ConsoleColors.BLUE_BOLD_BRIGHT, getTutorialText());
@@ -36,6 +42,12 @@ public final class Help {
     }
 
 
+    /**
+     * Prints given message in given color
+     *
+     * @param color a color of a message
+     * @param message message to be printed
+     */
     public static void printColoredMessage(ConsoleColors color, String message) {
         System.out.println(color.toString() + message + ConsoleColors.RESET);
     }
