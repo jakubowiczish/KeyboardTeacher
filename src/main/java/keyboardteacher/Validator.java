@@ -1,6 +1,8 @@
 package keyboardteacher;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -14,7 +16,7 @@ public class Validator {
      * Finds index of first error that might have occurred in user input
      * if there is no error, returns NO_ERROR
      *
-     * @param userInput String value representing user input
+     * @param userInput    String value representing user input
      * @param lineFromFile String value - a single line from a file
      * @return Index of first error that occurred,
      * if there is no error, returns NO_ERROR: -1
@@ -77,16 +79,15 @@ public class Validator {
      * Prints some random message for user saying that he typed everything correctly
      */
     private static void printSuccessMessage() {
-        ArrayList<String> successMessages = new ArrayList<>() {
-            {
-                add("Congrats!\n");
-                add("Keep it up!\n");
-                add("BANG!!!\n");
-                add("One more champ!\n");
-                add("Go on!\n");
-                add("Good for you!\n");
-            }
-        };
+        List<String> successMessages = Arrays.asList(
+                "Congrats!\n",
+                "Keep it up!\n",
+                "BANG!!!\n",
+                "One more champ!\n",
+                "Go on!\n",
+                "Good for you!\n"
+        );
+
 
         Random random = new Random();
         int randomIndex = random.nextInt(successMessages.size());
