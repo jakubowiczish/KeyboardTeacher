@@ -14,6 +14,7 @@ public class Teacher {
 
     private static DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
+
     /**
      * Reads from line by line, then does necessary operations
      * like getting input from user, checking it and printing information
@@ -107,5 +108,4 @@ public class Teacher {
 
         return whitespaceBuilder.toString();
     }
-
 }

@@ -28,7 +28,11 @@ public class App {
         boolean isPathValid = isPathValid(filePath);
 
         if (!isPathValid) {
-            Help.printColoredMessage(ConsoleColors.RED_BOLD, "File path is invalid! Try again");
+            Help.printColoredMessage(
+                    ConsoleColors.RED_BOLD,
+                    "File path is invalid! Try again"
+            );
+
             System.exit(-1);
         }
 
@@ -44,12 +48,6 @@ public class App {
             );
 
             System.exit(-1);
-
-        } else if (args.length > 1) {
-            Help.printColoredMessage(
-                    ConsoleColors.RED_BOLD,
-                    "Additional arguments will be ignored!"
-            );
         }
     }
 }
