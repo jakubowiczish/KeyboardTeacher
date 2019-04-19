@@ -13,6 +13,7 @@ public class App {
         String filePath = getValidFilePath(args[0]);
 
         Help.printUsageInfo();
+        Help.waitForUserInput();
 
         Teacher.startTeaching(filePath);
     }
@@ -50,4 +51,7 @@ public class App {
             System.exit(-1);
         }
     }
+
+
+
 }

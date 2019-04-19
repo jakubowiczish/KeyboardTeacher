@@ -1,5 +1,7 @@
 package keyboardteacher;
 
+import java.util.Scanner;
+
 /**
  * Contains some methods that might be helpful for the user
  */
@@ -9,18 +11,58 @@ public final class Help {
 
 
     /**
+     * Prints given message in given color
+     *
+     * @param color   a color of a message
+     * @param message message to be printed
+     */
+    public static void printColoredMessage(ConsoleColors color, String message) {
+        System.out.println(color.toString() + message + ConsoleColors.RESET);
+    }
+
+
+    /**
      * Prints some information that might be necessary for user
      */
     public static void printUsageInfo() {
         printColoredMessage(ConsoleColors.GREEN_BOLD, getUsageInfo());
         printColoredMessage(ConsoleColors.BLUE_BOLD_BRIGHT, getTutorialText());
-        printColoredMessage(ConsoleColors.PURPLE_BOLD, getGoodLuckInfo());
+    }
+
+
+    /**
+     * Waits for user to be ready, if he is not ready,
+     */
+    public static void waitForUserInput() {
+        Scanner scanner = new Scanner(System.in);
+
+        printColoredMessage(ConsoleColors.PURPLE_BOLD, getAreYouReadyText());
+        String userInput = scanner.nextLine();
+
+        if (userInput.toLowerCase().trim().equals("y")) {
+            printColoredMessage(ConsoleColors.PURPLE_BOLD, getGoodLuckInfo());
+        } else if (userInput.toLowerCase().trim().equals("n")) {
+            printColoredMessage(ConsoleColors.BLUE_BOLD_BRIGHT, getStartAgainText());
+            System.exit(0);
+        } else {
+            waitForUserInput();
+        }
     }
 
 
     private static String getUsageInfo() {
         return "\nThis program is dedicated to help you" +
                 " improve your typing skills!\n";
+    }
+
+
+    private static String getAreYouReadyText() {
+        return "Are you ready?\ny/n\n";
+    }
+
+
+    private static String getStartAgainText() {
+        return "Start again when you're ready!\n";
     }
 
 
@@ -39,17 +81,6 @@ public final class Help {
 
     private static String getGoodLuckInfo() {
         return "\nLet's go champ! Good luck!\n";
-    }
-
-
-    /**
-     * Prints given message in given color
-     *
-     * @param color a color of a message
-     * @param message message to be printed
-     */
-    public static void printColoredMessage(ConsoleColors color, String message) {
-        System.out.println(color.toString() + message + ConsoleColors.RESET);
     }
 }
 
