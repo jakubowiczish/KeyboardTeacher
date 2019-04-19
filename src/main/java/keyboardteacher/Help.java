@@ -74,7 +74,6 @@ public final class Help {
                 "In second line you may sometimes see these strange symbols\n" +
                 "they'll tell you what to type when there is whitespace character somewhere in the text\n" +
                 "\".\" stands for space\n" +
-                "\"--->\" stands for tab\n" +
                 "\"\\n\" stands for new line - that's when you ought to hit enter button.\n";
     }
 

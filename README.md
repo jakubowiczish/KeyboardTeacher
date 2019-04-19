@@ -1,6 +1,6 @@
 ## Keyboard Teacher
 
-Console application that is destined to help you improve your typing skills!
+Console application that is designed to help you improve your typing skills!
 
 In order to run this app:
 1. Download necessary files
@@ -18,4 +18,4 @@ In order to run this app:
     
 ### Usage example
 
-[![asciicast](https://asciinema.org/a/qZzFCJNX8iIAA5wX2Ltb9OGCb.svg)](https://asciinema.org/a/qZzFCJNX8iIAA5wX2Ltb9OGCb)
+[![asciicast](https://asciinema.org/a/i0VR78EQ0BQ3tHD4frhIeMXsH.svg)](https://asciinema.org/a/i0VR78EQ0BQ3tHD4frhIeMXsH)
