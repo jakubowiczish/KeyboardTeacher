@@ -1,0 +1,25 @@
+areYouReadyMessage: |+
+
+  Are you ready?
+  y/n
+
+usageInfoMessage: |+
+
+  This program is dedicated to help you improve your typing skills!
+
+startAgainInfoMessage: |+
+  Start again when you're ready!
+
+goodLuckInfoMessage: |+
+  Let's go champ! Good luck!\
+
+tutorialMessage: |+
+  Before we start let me tell you something
+
+  As soon as you start, you will see 2 lines until every line from file is processed
+  First one is just a regular line from given file
+  Second one is line with whitespaces highlighted - in order to help you type everything correctly!
+  In second line you may sometimes see these strange symbols
+  they'll tell you what to type when there is whitespace character somewhere in the text
+  "." stands for space
+  "\n" stands for new line - that's when you ought to hit enter button.

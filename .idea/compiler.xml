@@ -2,8 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
-      <module name="KeyboardTeacher.main" target="11" />
-      <module name="KeyboardTeacher.test" target="11" />
+      <module name="KeyboardTeacher.main" target="1.8" />
+      <module name="KeyboardTeacher.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
