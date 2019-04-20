@@ -3,7 +3,7 @@ package keyboardteacher;
 import java.util.Scanner;
 
 /**
- * Contains some methods that might be helpful for the user
+ * Singleton that contains some methods that might be helpful for the user
  */
 public enum Help {
     INSTANCE;

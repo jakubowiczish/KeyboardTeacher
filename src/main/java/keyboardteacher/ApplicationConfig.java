@@ -4,7 +4,9 @@ import org.yaml.snakeyaml.Yaml;
 
 import java.util.Map;
 
-
+/**
+ * Singleton responsible for getting helping messages for user from a resource file
+ */
 public enum ApplicationConfig {
     INSTANCE;
 
