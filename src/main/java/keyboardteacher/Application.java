@@ -9,8 +9,8 @@ public class Application {
 
     public static void main(String[] args) {
         validateUserInput(args);
-        Help.printUsageInfo();
-        Help.waitForUserInput();
+        Help.INSTANCE.printUsageInfo();
+        Help.INSTANCE.waitForUserInput();
         Teacher.startTeaching(args[0]);
     }
 
@@ -23,18 +23,18 @@ public class Application {
 
     private static void validateUserInput(String[] input) {
         if (input.length == 0) {
-            Help.printColoredMessage(
+            Help.INSTANCE.printColoredMessage(
                     ConsoleColors.RED_BOLD,
-                    "Wrong number of arguments - no file path given!"
+                    ApplicationConfig.INSTANCE.getValue("wrongNumberOfArgumentsMessage")
             );
 
             System.exit(-1);
         }
 
         if (!isPathValid(input[0])) {
-            Help.printColoredMessage(
+            Help.INSTANCE.printColoredMessage(
                     ConsoleColors.RED_BOLD,
-                    "File path is invalid! Try again"
+                    ApplicationConfig.INSTANCE.getValue("invalidPathMessage")
             );
 
             System.exit(-1);

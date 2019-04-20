@@ -5,10 +5,8 @@ import java.util.Scanner;
 /**
  * Contains some methods that might be helpful for the user
  */
-public final class Help {
-    private Help() {
-    }
-
+public enum Help {
+    INSTANCE;
 
     /**
      * Prints given message in given color
@@ -16,7 +14,7 @@ public final class Help {
      * @param color   a color of a message
      * @param message message to be printed
      */
-    public static void printColoredMessage(ConsoleColors color, String message) {
+    public void printColoredMessage(ConsoleColors color, String message) {
         System.out.println(color.toString() + message + ConsoleColors.RESET);
     }
 
@@ -24,7 +22,7 @@ public final class Help {
     /**
      * Prints some information that might be necessary for user
      */
-    public static void printUsageInfo() {
+    public void printUsageInfo() {
         printColoredMessage(
                 ConsoleColors.GREEN_BOLD,
                 ApplicationConfig.INSTANCE.getValue("usageInfoMessage")
@@ -40,7 +38,7 @@ public final class Help {
     /**
      * Waits for user to be ready, if he is not ready,
      */
-    public static void waitForUserInput() {
+    public void waitForUserInput() {
         Scanner scanner = new Scanner(System.in);
 
         printColoredMessage(

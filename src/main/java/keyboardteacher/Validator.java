@@ -53,7 +53,10 @@ public class Validator {
             printSuccessMessage();
         } else {
             printPositionOfError(errorIndex);
-            Help.printColoredMessage(ConsoleColors.RED_BOLD, "First error at index: " + errorIndex);
+            Help.INSTANCE.printColoredMessage(
+                    ConsoleColors.RED_BOLD,
+                    "First error at index: " + errorIndex
+            );
         }
     }
 
@@ -70,7 +73,10 @@ public class Validator {
         }
         errorPlacement.append("\u2191");
 
-        Help.printColoredMessage(ConsoleColors.RED_BOLD, errorPlacement.toString());
+        Help.INSTANCE.printColoredMessage(
+                ConsoleColors.RED_BOLD,
+                errorPlacement.toString()
+        );
     }
 
 
@@ -91,7 +97,10 @@ public class Validator {
         Random random = new Random();
         int randomIndex = random.nextInt(successMessages.size());
 
-        Help.printColoredMessage(ConsoleColors.GREEN_BOLD, successMessages.get(randomIndex));
+        Help.INSTANCE.printColoredMessage(
+                ConsoleColors.GREEN_BOLD,
+                successMessages.get(randomIndex)
+        );
     }
 
 }

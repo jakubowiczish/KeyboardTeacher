@@ -49,13 +49,13 @@ public class Teacher {
             }
 
         } catch (IOException e) {
-            Help.printColoredMessage(
+            Help.INSTANCE.printColoredMessage(
                     ConsoleColors.RED_BOLD,
                     "Something wrong happened while reading a line from given file"
             );
         }
 
-        Help.printColoredMessage(
+        Help.INSTANCE.printColoredMessage(
                 ConsoleColors.BLUE_BOLD_BRIGHT,
                 "Whole typing operation lasted " + decimalFormat.format(totalTypingTime) + " seconds"
         );
@@ -81,7 +81,7 @@ public class Teacher {
      */
     private static void printTypingTime(double typingTime) {
         String timeSentence = "It took you " + decimalFormat.format(typingTime) + " seconds to retype the line!";
-        System.out.println(ConsoleColors.YELLOW_BOLD + timeSentence + ConsoleColors.RESET);
+        Help.INSTANCE.printColoredMessage(ConsoleColors.YELLOW_BOLD, timeSentence);
     }
 
 

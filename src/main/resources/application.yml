@@ -23,3 +23,9 @@ tutorialMessage: |+
   they'll tell you what to type when there is whitespace character somewhere in the text
   "." stands for space
   "\n" stands for new line - that's when you ought to hit enter button.
+
+wrongNumberOfArgumentsMessage: |+
+  Wrong number of arguments - no file path given!\
+
+invalidPathMessage: |+
+  File path is invalid! Try again\
