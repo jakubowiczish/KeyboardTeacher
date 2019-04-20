@@ -22,7 +22,6 @@ public enum ConsoleColors {
         this.colorCode = colorCode;
     }
 
-
     @Override
     public String toString() {
         return colorCode;

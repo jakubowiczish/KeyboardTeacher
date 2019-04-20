@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'application'
 }
 
 repositories {
@@ -8,16 +7,16 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.google.guava:guava:26.0-jre'
+    implementation 'org.yaml:snakeyaml:1.24'
     testImplementation 'junit:junit:4.12'
 }
 
 jar {
     manifest {
-        attributes "Main-Class": "keyboardteacher.App"
+        attributes "Main-Class": "keyboardteacher.Application"
     }
 
     from {
-        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
 }
